@@ -1619,8 +1619,15 @@ MonoBehaviour:
   - {fileID: 0}
   chaseTarget: {fileID: 0}
   escapeTarget: {fileID: 0}
+  audioSource: {fileID: 0}
+  walk: {fileID: 0}
+  run: {fileID: 0}
+  pain: {fileID: 0}
+  jump: {fileID: 0}
+  attack: {fileID: 0}
   scareTime: 1
   scared: 0
+  chaseRadius: 0
   animator: {fileID: 95645487012357664}
   nextWayPoint: 0
 --- !u!135 &135235364461527258
