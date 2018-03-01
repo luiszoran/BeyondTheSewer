@@ -17,7 +17,9 @@ public class RadarIconController : MonoBehaviour {
 	int radius = 10;
 
 	void Awake(){
-		StartCoroutine ("RadarRefresh");
+        target = GameObject.FindGameObjectWithTag("Lizard").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        StartCoroutine("RadarRefresh");
 		StartCoroutine ("Beeps");
 	}
 

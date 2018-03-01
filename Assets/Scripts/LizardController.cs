@@ -50,8 +50,8 @@ public class LizardController : MonoBehaviour {
 		navMeshAgent = this.GetComponent<NavMeshAgent>();
 		currentState = State.Patrol;
 		animator = GetComponentInChildren<Animator> ();
-		//chaseTarget = FindObjectOfType<PlayerController>().transform;
-		audioSource.clip = walk;
+		chaseTarget = GameObject.FindGameObjectWithTag("Player").transform;
+        audioSource.clip = walk;
 		audioSource.Play ();
 		scared = false;
 		jumping = false;
@@ -126,11 +126,11 @@ public class LizardController : MonoBehaviour {
 	}
 
 	private IEnumerator End(){
-		yield return new WaitForSeconds (2f);
-		SceneManager.LoadScene("menu");
-	}
+		yield return new WaitForSeconds (1f);
+        StartCoroutine(GameController.gameController.LoadLevel("Menu"));
+    }
 
-	private void Escape()
+    private void Escape()
 	{
 		int furthestWaypoint = 0;
 		/*for (int i = 1; i < wayPointList.Length; i++) {
